@@ -1,0 +1,17 @@
+<h2>Your URLs</h2>
+<form action="/shorten" method="POST">
+  <input type="url" name="fullUrl" required />
+  <button type="submit">Shorten</button>
+</form>
+
+<ul>
+  <% urls.forEach(url => { %>
+    <li>
+      <a href="/<%= url.shortUrl %>" target="_blank"><%= url.shortUrl %></a>
+      — Clicks: <%= url.clicks %>
+    </li>
+  <% }) %>
+</ul>
+<a href="/logout">Logout</a>
+
+
